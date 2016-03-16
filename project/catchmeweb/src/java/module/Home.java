@@ -30,12 +30,8 @@ public class Home extends Module {
 
     @Override
     public void viewRequest(JsonObject data, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher view = request.getRequestDispatcher(getHtmlPath());
+        RequestDispatcher view = request.getRequestDispatcher("/jsp/module/home.jsp");
         view.forward(request, response);
-    }
-
-    public String getHtmlPath() {
-        return "/html/home.html";
     }
 
 

@@ -1,6 +1,6 @@
 var TEST = true;
-var DEFAULT_PAGE = "/ideatour";
-var APPLY_DEFAULT_PAGE = null;
+var DEFAULT_PAGE = "/home";
+var APPLY_DEFAULT_PAGE = function () {return false;};
 
 
 /*** Network ***/
@@ -12,11 +12,6 @@ var APPLY_DEFAULT_PAGE = null;
  */
 var Network = {
     moduleRequest: function (url, action, data, successCallback, errorCallback) {
-        // allow only current module to send data
-        if (IdeaTour.started && IdeaTour.currentModule().module !== url) {
-            console.warn(url + " tried to make a module request but is not the active module");
-            return;
-        }
         if (!data)
             data = {}; // always send data
         $.ajax({
@@ -70,20 +65,6 @@ var ContentManager = {
         this.changeContentSelector("#ajax-content", content, data);
     },
     changeContentSelector: function (selector, content, data) {
-        console.log("Requesting a content change to " + content + ", IdeaTour.running=" + IdeaTour.running);
-//        if (!IdeaTour.running) {
-//            console.log("Idea Tour is running - request interrupt.");
-//            if (!IdeaTour.interrupt()) {
-//                console.log("Idea Tour got not interrupted - continue with Idea Tour.");
-//                // FIXME change page name to "/ideatour"
-//                return; // do not interrupt
-//            }
-//            console.log("Idea Tour got interrupted.");
-//        }
-//        if (this.currentContent && this.currentContent === content) {
-//            console.warn("Tried to load same content again.");
-//            return;
-//        }
 //        this.currentContent = content;
         // different content or no current content
         if (data) {

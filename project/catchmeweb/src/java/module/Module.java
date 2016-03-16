@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import db.DatabaseRequest;
+import java.util.HashMap;
 
 /**
  * Defines 2 request handler one for a "get-html" and one for a null action (empty message).
@@ -44,6 +45,9 @@ public abstract class Module extends JsonServlet {
         });
         initModule();
     }
+
+    @Override
+    protected abstract void setupRequestHandlers(HashMap<String, RequestHandler> requestHandlers);
 
     protected abstract void initModule();
 
