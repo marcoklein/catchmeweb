@@ -1292,7 +1292,7 @@
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">240</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">163</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">56</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">69</XPD:ATTR>
 <XPD:REF name="Model">MeXYeLT5sUCl3vOfOIL+cAAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="LCZpb2a1Y0S+Nz0NEO/k2gAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="MYt8+s+QDU+is+T6oa+eKwAA">
@@ -1320,7 +1320,7 @@
 <XPD:OBJ name="OwnedViews[10]" type="UMLAssociationView" guid="MeqOIWxtCkaKmppG3GHcSQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">396,96;351,55</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">394,96;361,68</XPD:ATTR>
 <XPD:REF name="Model">XSwhIpPLjk2s/PZNCzBecgAA</XPD:REF>
 <XPD:REF name="Head">QgMinnvKa0qBH5wqdlM/fgAA</XPD:REF>
 <XPD:REF name="Tail">v5+COxyy3UyvKEZjvIWcjgAA</XPD:REF>
@@ -1404,7 +1404,7 @@
 <XPD:OBJ name="OwnedViews[11]" type="UMLAssociationView" guid="Fu7WHJZQAkCDOPgheGyYUQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">312,55;292,120;291,128</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">310,68;292,120;291,128</XPD:ATTR>
 <XPD:REF name="Model">ceZHCXwaIkGGtGBJCa0Q5wAA</XPD:REF>
 <XPD:REF name="Head">wc3xsMczsECCSHG+vjZrggAA</XPD:REF>
 <XPD:REF name="Tail">QgMinnvKa0qBH5wqdlM/fgAA</XPD:REF>
@@ -2096,7 +2096,7 @@
 <XPD:REF name="Views[7]">J3VZMTiGRUSgLpDHPA96pQAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="dO03m6ro3UiFUtrAdtBCmgAA">
-<XPD:ATTR name="Name" type="string">simulate</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">simulateRound</XPD:ATTR>
 <XPD:REF name="Owner">k/wJpYUUKkaFD6N2nT1XCwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:ATTR name="#TypedFeatures" type="integer">1</XPD:ATTR>
@@ -2343,6 +2343,13 @@
 <XPD:ATTR name="#Associations" type="integer">2</XPD:ATTR>
 <XPD:REF name="Associations[0]">r/UF1yNOzkK1r/1yAA3bWAAA</XPD:REF>
 <XPD:REF name="Associations[1]">x6+3H37NbkqO9MCk843jkAAA</XPD:REF>
+<XPD:ATTR name="#Attributes" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="NJfzH38uKUa6ZmjN34xt5QAA">
+<XPD:ATTR name="Name" type="string">rounds</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="Owner">MeXYeLT5sUCl3vOfOIL+cAAA</XPD:REF>
+</XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[12]" type="UMLAssociation" guid="XSwhIpPLjk2s/PZNCzBecgAA">
 <XPD:REF name="Namespace">JW5ckxsZBUOd0+7qnbZKcQAA</XPD:REF>

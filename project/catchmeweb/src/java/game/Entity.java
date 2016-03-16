@@ -58,8 +58,8 @@ public class Entity implements Serializable {
      * @param controlClass
      * @return 
      */
-    public Control getControl(Class<? extends Control> controlClass) {
-        return controlMap.get(controlClass);
+    public <T extends Control> T getControl(Class<T> controlClass) {
+        return (T) controlMap.get(controlClass);
     }
     
     

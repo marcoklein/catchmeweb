@@ -14,6 +14,9 @@ import java.util.logging.Logger;
 public class CatchMeGame extends Game implements Renderer {
     private static final Logger LOG = Logger.getLogger(CatchMeGame.class.getName());
     
+    protected int width;
+    protected int height;
+    
     protected HtmlRenderer renderer;
     protected HtmlBuilder renderedHtml;
 
@@ -39,6 +42,26 @@ public class CatchMeGame extends Game implements Renderer {
             return "";
         }
         return renderedHtml.toString();
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public HtmlRenderer getRenderer() {
+        return renderer;
     }
     
 }

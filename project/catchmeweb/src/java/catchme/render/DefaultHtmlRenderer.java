@@ -1,6 +1,8 @@
 package catchme.render;
 
+import catchme.CatchMeGame;
 import catchme.HtmlBuilder;
+import catchme.control.FieldControl;
 import game.Entity;
 import game.World;
 
@@ -10,17 +12,24 @@ import game.World;
  */
 public class DefaultHtmlRenderer extends HtmlRenderer {
     
-    
+    private CatchMeGame game;
 
+    public DefaultHtmlRenderer(CatchMeGame game) {
+        this.game = game;
+    }
+    
     @Override
     protected void renderHtml(World world, HtmlBuilder html) {
         html.add("<table>");
         
         // get world size
+        int width = game.getWidth();
+        int height = game.getHeight();
         
         // add table row
         for (Entity entity : world.getEntities()) {
-            entity.getControl(Entity);
+            FieldControl control = entity.getControl(FieldControl.class);
+            control.getX();
         }
         
         
