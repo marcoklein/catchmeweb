@@ -1,6 +1,7 @@
 package catchme;
 
 import catchme.render.HtmlRenderer;
+import game.Entity;
 import game.Game;
 import game.Renderer;
 import game.Simulator;
@@ -19,6 +20,8 @@ public class CatchMeGame extends Game implements Renderer {
     
     protected HtmlRenderer renderer;
     protected HtmlBuilder renderedHtml;
+    
+    protected Entity players;
 
     @Override
     protected void initWorld(World world) {

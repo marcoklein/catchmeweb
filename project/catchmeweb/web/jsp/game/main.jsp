@@ -87,6 +87,8 @@
 </div>
 
 <script>
+    /* Init of game */
+    sendLogin();
     $("#world").draggable();
     
     $(window).resize(resize);
@@ -109,3 +111,4 @@
         $("#world-container").height(height);
     }
 </script>
+<script src="/js/app/catchme.js"></script>
