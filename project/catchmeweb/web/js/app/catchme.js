@@ -1,4 +1,4 @@
-var playerIds;
+var playerId;
 
 /* Main loop */
 var finish = false;
@@ -10,8 +10,8 @@ function startMain() {
     }
     setTimeout(function () {
         // execute again
+        console.log("Requesting world update.");
         startMain();
-
 
     }, 1000);
 }
@@ -20,6 +20,7 @@ function startMain() {
 /* Network */
 
 function sendLogin() {
+    playerId = "Super Ralf";
     // process login after get-view request
     Network.moduleRequest(
             "/game",
@@ -28,14 +29,8 @@ function sendLogin() {
                 gameId: "TEST123",
                 name: "Super Ralf",
                 visitor: false
-            }, loginCallback
+            }, worldUpdateCallback
             );
-}
-
-function loginCallback(response) {
-    // get ids of players the client can control
-    playerIds = response.playerIds;
-    worldUpdateCallback(response.worldUpdate);
 }
 
 function sendWorldUpdate() {
@@ -54,6 +49,17 @@ function sendWorldUpdate() {
  * @returns {undefined}
  */
 function worldUpdateCallback(response) {
+    var resetWorld = response.resetWorld;
+    if (resetWorld) {
+        // clear everything
+        $("#world").empty();
+        // create new world with recieved size
+        var width = resetWorld.width;
+        var height = resetWorld.height;
+        // TODO create basic field
+        var world = $("#world");
+        world.append($("<table>"));
+    }
     var addEntities = response.addEntities;
     if (addEntities) {
         // TODO use jquery to add entity to table

@@ -2,7 +2,7 @@ package catchme.render;
 
 import catchme.CatchMeGame;
 import catchme.HtmlBuilder;
-import catchme.control.FieldControl;
+import catchme.control.EntityControl;
 import game.Entity;
 import game.World;
 
@@ -28,7 +28,7 @@ public class DefaultHtmlRenderer extends HtmlRenderer {
         
         // add table row
         for (Entity entity : world.getEntities()) {
-            FieldControl control = entity.getControl(FieldControl.class);
+            EntityControl control = entity.getControl(EntityControl.class);
             control.getX();
         }
         

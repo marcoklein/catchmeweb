@@ -2,7 +2,10 @@ package module;
 
 import catchme.CatchMeGame;
 import catchme.GameManager;
+import catchme.control.EntityControl;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import game.Entity;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.logging.Logger;
@@ -61,8 +64,39 @@ public class GameModule extends Module {
             // lookup game with given id
             CatchMeGame game = GameManager.getInstance().findGame(gameId);
             
+            // get player entity
+            Entity player = game.getPlayer(playerName);
+            if (player == null) {
+                player = game.addPlayer(playerName);
+            }
+            
+            // respond with world update
+            JsonObject respData = new JsonObject();
+            
+            // send reset world to init world
+            JsonObject resetWorld = new JsonObject();
+            resetWorld.addProperty("width", 10);
+            resetWorld.addProperty("height", 10);
+            respData.add("resetWorld", resetWorld);
+            
+            // send all active entities
+            JsonArray addEntities = new JsonArray();
+            for (Entity entity : game.getWorld().getEntities()) {
+                EntityControl control = entity.getControl(EntityControl.class);
+                if (control == null) {
+                    JsonObject entityProps = new JsonObject();
+                    entityProps.addProperty("x", control.getX());
+                    entityProps.addProperty("y", control.getY());
+                    entityProps.addProperty("view", control.getView());
+                }
+            }
+            respData.add("addEntities", addEntities);
+            
+            
+            
+            
+            response.getWriter().print(gson.toJson(respData));
         }
-
     }
     private class WorldUpdateRequest implements RequestHandler {
 
